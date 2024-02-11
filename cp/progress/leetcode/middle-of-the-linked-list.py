@@ -4,17 +4,18 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def get_length(self, head: Optional[ListNode]):
         count = 0
-
         itr = head
 
         while itr:
             count += 1
             itr = itr.next
-        
 
-        count = (count // 2)
+        return count // 2
+
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        count = self.get_length(head)
 
         itr = head
         while count:
@@ -22,4 +23,3 @@ class Solution:
             count -= 1
 
         return itr
-        
