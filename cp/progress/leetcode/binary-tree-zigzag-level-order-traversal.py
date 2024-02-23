@@ -15,6 +15,7 @@ class Solution:
 
             q = deque()
             q.append(root)
+            flip = 1
 
             while q:
                 N = len(q)
@@ -29,11 +30,11 @@ class Solution:
                     if node.right:
                         q.append(node.right)
 
-                ans.append(temp)
+                ans.append(temp[::flip])
+                flip *= -1
 
         levelOrder(root)
 
-        for i in range(1, len(ans), 2):
-            ans[i][:] = ans[i][::-1]
+        
 
         return ans
