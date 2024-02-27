@@ -20,12 +20,8 @@ class Solution:
 
 
         def backtrack(i, arr):
-            print(arr)
             if len(arr) == k:
                 ans.append(arr[:])
-                return
-
-            if arr and arr[-1] > n - 1:
                 return
 
             for choice in range(i + 1, n + 1):
