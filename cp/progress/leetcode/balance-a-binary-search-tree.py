@@ -10,9 +10,13 @@ class Solution:
             if not root:
                 return
 
-            inorder(root.left)
+            if root.left:
+                inorder(root.left)
+
             path.append(root.val)
-            inorder(root.right)
+
+            if root.right:
+                inorder(root.right)
 
         path = []
         inorder(root)
