@@ -18,11 +18,13 @@ class Solution:
                 if arr[i] > curMax[0]:
                     curMax = (arr[i], i)
 
-            res.append(curMax[1] + 1)
-            res.append(r)
-
-            swap(0, curMax[1])
-            swap(0, r - 1)
+            if curMax[1] != 0:
+                res.append(curMax[1] + 1)
+                swap(0, curMax[1])
+                
+            if r > 1:
+                res.append(r)
+                swap(0, r - 1)
 
             r -= 1
 
