@@ -1,36 +1,29 @@
 class Solution:
     def totalNQueens(self, n: int) -> int:
-        def not_same_diagonal(coords):
-            n = len(coords)
-
-            for i in range(n - 1):
-                for j in range(i + 1, n):
-                    x1, y1 = coords[i]
-                    x2, y2 = coords[j]
-
-                    if abs(x1 - x2) == abs(y1 - y2):
-                        return False
-
-            return True 
         
-        def backtrack(i, j, path, col):
+        
+        def backtrack(row, path, colSet, negDeg, posDeg):
             nonlocal count
-            if not not_same_diagonal(path):
-                return
 
             if len(path) == n:
                 count += 1
                 return
 
-            for k in range(n):
-                if k not in col:
-                    path.append((i, k))
-                    col.add(k)
-                    backtrack(i + 1, k , path, col)
+            for col in range(n):
+                if col not in colSet and (col + row) not in posDeg and (row - col) not in negDeg:
+                    path.append((row, col))
+                    colSet.add(col)
+                    negDeg.add(row - col)
+                    posDeg.add(row + col)
+                    backtrack(row + 1 , path, colSet, negDeg, posDeg)
                     path.pop()
-                    col.remove(k)
+                    colSet.remove(col)
+                    posDeg.remove(row + col)
+                    negDeg.remove(row - col)
+
+
 
         count = 0
-        backtrack(0, 0, [], set())
+        backtrack(0, [], set(), set(), set())
 
         return count
