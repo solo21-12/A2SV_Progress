@@ -1,32 +1,19 @@
 class Solution:
     def numberOfWays(self, s: str) -> int:
-        prefixSum = [[0] for _ in range(len(s))]
-        sufixSum = [[0] for _ in range(len(s))]
-
+        ways = 0
+        oneZero, zeroOne = 0, 0
         ones, zeros = 0, 0
-        for i, ch in enumerate(s):
-            prefixSum[i] = (zeros, ones)
 
-            if ch == "1":
+        for ch in s:
+            if ch == '1':
                 ones += 1
+                zeroOne += zeros
+                ways += oneZero
             else:
                 zeros += 1
+                oneZero += ones
+                ways += zeroOne
 
-        ones, zeros = 0, 0
-        for i in range(len(s) - 1, -1, -1):
-            sufixSum[i] = (zeros, ones)
-            if s[i] == "1":
-                ones += 1
-            else:
-                zeros += 1
+        return ways
 
-        ans = 0
-        for i, ch in enumerate(s):
-            z, o = prefixSum[i]
-            ze, on = sufixSum[i]
-            if ch == "1":
-                ans += z * ze
-            else:
-                ans += on * o
-
-        return ans
+        
