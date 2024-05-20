@@ -1,0 +1,1 @@
+{"name":"Local: topo","url":"/home/dawit/Learn_staff/DSA/A2SV_progress/topo.py","tests":[{"id":1712822922085,"input":"6 6\n4 0\n4 1\n5 0\n5 2\n2 3\n3 1","output":"5 4 2 3 1 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dawit/Learn_staff/DSA/A2SV_progress/topo.py","group":"local","local":true}

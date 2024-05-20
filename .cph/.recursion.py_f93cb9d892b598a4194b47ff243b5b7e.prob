@@ -1,0 +1,1 @@
+{"name":"Local: recursion","url":"/home/dawit/Learn_staff/DSA/A2SV_progress/recursion.py","tests":[{"id":1708418137570,"input":"1 2 3 4 5","output":"[5, 4, 3, 2, 1]"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dawit/Learn_staff/DSA/A2SV_progress/recursion.py","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: palindromString","url":"/home/dawit/Learn_staff/DSA/A2SV_progress/palindromString.py","tests":[{"id":1708419292046,"input":"abklba","output":"False"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dawit/Learn_staff/DSA/A2SV_progress/palindromString.py","group":"local","local":true}
